@@ -1,0 +1,23 @@
+﻿Random random = new Random();
+int daysUntilExpiration = random.Next(12);
+int discountPercentage = 0;
+
+// Your code goes here
+var message = "Your subscription has expired.";
+
+if(daysUntilExpiration > 5){
+  message = "Your subscription will expire soon. Renew now!";
+}
+
+if(daysUntilExpiration > 0 && daysUntilExpiration <= 5){
+  if(daysUntilExpiration <=5){
+    discountPercentage = 20;
+  } else {
+    discountPercentage = 10;
+  }
+  message = $"Your subscription expires in {daysUntilExpiration} days.\nRenew now and save {discountPercentage}%!";
+}
+
+if(daysUntilExpiration <= 10){
+Console.WriteLine(message);
+}
